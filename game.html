@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game</title>
+  <style>
+    *
+    {
+      margin:0px;
+      padding:0px;
+      box-sizing: border-box;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      grid-gap: 5px;
+      margin: 29%;
+      border: 2px solid black;
+       place-items: center;
+       height:450px;
+       justify-items: center;
+       margin-top:34px;
+
+
+
+    }
+
+    div{
+
+    display: inline;
+    width: 162px;
+    height: 140px;
+    border: 2px solid black;
+    justify-items: center;
+    text-align: center;
+    background: white;
+
+    }
+    img{
+      width:80%;
+      height:80%;
+      background-position: center;
+      background-size:cover;
+      background-repeat: no-repeat;
+    }
+    #cir
+    {
+      padding-top: 23px;;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="container">
+    <div id="1"></div>
+    <div id="2"></div>
+    <div id="3"></div>
+    <div id="4"></div>
+    <div id="5"></div>
+    <div id="6"></div>
+    <div id="7"></div>
+    <div id="8"></div>
+    <div id="9"></div>
+  </header>
+  <script>
+    var classname = "cross";
+    var y = 1;
+    const sucess = ['1', '2', '3'];
+    const s2 = ['1', '4', '7'];
+    const s3 = ['1', '5', '9'];
+    const s4 = ['2', '5', '8'];
+    const s5 = ['3', '6', '9'];
+    const s6 = ['7', '5', '3'];
+    const s7 = ['4', '5', '6'];
+    const s8 = ['7', '8', '9'];
+
+    const cross = [];
+    const circle = [];
+    var d = document.getElementsByTagName('div');
+    for (var i = 0; i < d.length; i++) {
+      console.log(d.length);
+      d[i].addEventListener('click', function (e) {
+        if (y % 2 == 0) {
+          var ele = e.target.id;
+          cross.push(ele);
+          var im= document.createElement('img');
+          im.src="pngwing.com.png";
+          im.id="cir";
+          e.target.appendChild(im);
+          console.log(`cross ${ele} ${cross}`);
+          if (cross.length >= 3) {
+            var ch1 = sucess.every((val) => {
+              return cross.includes(val)
+            })
+            if (ch1 == true) {
+              alert("Player 2 won!!");
+              
+            }
+            var ch2 = s2.every((val) => {
+              return cross.includes(val)
+            })
+            if (ch2 == true) {
+              alert("Player 2 won!!")
+            }
+            var ch3 = s3.every((val) => {
+              return cross.includes(val)
+            })
+            if (ch3 == true) {
+              alert("Player 2 won!!")
+            }
+            var ch4 = s4.every((val) => {
+              return cross.includes(val)
+            })
+            if (ch4 == true) {
+              alert("Player 2 won!!")
+            }
+            var ch5 = s5.every((val) => {
+              return cross.includes(val)
+            })
+            if (ch5 == true) {
+              alert("Player 2 won!!")
+            }
+            var ch6 = s6.every((val) => {
+              return cross.includes(val)
+            })
+            if (ch6 == true) {
+              alert("Player 2 won!!")
+            }
+            var ch7 = s7.every((val) => {
+              return cross.includes(val)
+            })
+            if (ch7 == true) {
+              alert("Player 2 won!!")
+            } 
+            var ch8 = s8.every((val) => {
+              return cross.includes(val)
+            })
+            if (ch8 == true) {
+              alert("Player 2 won!!")
+            }
+
+
+
+          }
+
+          y = y + 1;
+        }
+        else {
+          var im= document.createElement('img');
+          im.src="cross-png-25669.png";
+          e.target.appendChild(im);
+          var ele = e.target.id;
+          circle.push(ele);
+          console.log(`circle ${ele} ${circle}`);
+          if (circle.length >= 3) {
+            var ch1 = sucess.every((val) => {
+              return circle.includes(val)
+            })
+            if (ch1 == true) {
+              alert("Player 1 won!!")
+            }
+            var ch2 = s2.every((val) => {
+              return cross.includes(val)
+            })
+            if (ch2 == true) {
+              alert("Player 1 won!!")
+            }
+            var ch3 = s3.every((val) => {
+              return circle.includes(val)
+            })
+            if (ch3 == true) {
+              alert("Player 1 won!!")
+            }
+            var ch4 = circle.every((val) => {
+              return s4.includes(val)
+            })
+            if (ch4 == true) {
+              alert("Player 1 won!!")
+            }
+            var ch5 = s5.every((val) => {
+              return circle.includes(val)
+            })
+            if (ch5 == true) {
+              alert("Player 1 won!!")
+            }
+            var ch6 = s6.every((val) => {
+              return circle.includes(val)
+            })
+            if (ch6 == true) {
+              alert("Player 1 won!!")
+            }
+            var ch7 = s7.every((val) => {
+              return circle.includes(val)
+            })
+            if (ch7 == true) {
+              alert("Player 1 won!!")
+            } 
+            var ch8 = s8.every((val) => {
+              return circle.includes(val)
+            })
+            if (ch8 == true) {
+              alert("Player 1 won!!")
+            }
+
+            
+
+          }
+
+          y = y + 1;
+        }
+
+
+      });
+    }
+
+
+
+
+
+  </script>
+</body>
+
+</html>
